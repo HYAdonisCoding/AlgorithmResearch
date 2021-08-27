@@ -1,6 +1,7 @@
-package com.adam;
+package com.adam.model;
 
-public class Person {
+public class Person implements Comparable<Person> {
+
 	public Person(int age, float height, String name) {
 		super();
 		this.age = age;
@@ -34,5 +35,10 @@ public class Person {
 		hashCode = hashCode * 31 + Float.hashCode(height);
 		hashCode = hashCode * 31 + (name != null ? name.hashCode() : 0);
 		return hashCode;
+	}
+
+	@Override
+	public int compareTo(Person o) {
+		return age - o.age;
 	}
 }
