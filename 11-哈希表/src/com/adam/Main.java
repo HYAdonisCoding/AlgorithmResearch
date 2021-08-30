@@ -4,11 +4,37 @@ import com.adam.Times.Task;
 import com.adam.file.FileInfo;
 import com.adam.file.Files;
 import com.adam.map.HashMap;
+import com.adam.map.LinkedHashMap;
+import com.adam.map.Map;
+import com.adam.map.Map.Visitor;
+import com.adam.map.TreeMap;
 import com.adam.model.Key;
 import com.adam.model.SubKey1;
 import com.adam.model.SubKey2;
 
 public class Main {
+	private static void testMap(Map<String, Integer> map, String[] words) {
+		Times.test(map.getClass().getName(), new Task() {
+			@Override
+			public void execute() {
+				for (String word : words) {
+					Integer count = map.get(word);
+					count = count == null ? 0 : count;
+					map.put(word, count + 1);
+				}
+				System.out.println(map.size()); // 17188
+
+				int count = 0;
+				for (String word : words) {
+					Integer i = map.get(word);
+					count += i == null ? 0 : i;
+					map.remove(word);
+				}
+				Asserts.test(count == words.length);
+				Asserts.test(map.size() == 0);
+			}
+		});
+	}
 
 //	private static void test1() {
 //		String string = "jack";// 3254239
@@ -188,6 +214,15 @@ public class Main {
 		Asserts.test(map.get(new Key(6)) == null);
 		Asserts.test(map.get(new Key(7)) == null);
 		Asserts.test(map.get(new Key(8)) == 8);
+		map.traversal(new Visitor<Object, Integer>() {
+
+			@Override
+			public boolean visit(Object key, Integer value) {
+				System.out.println(key + " : " + value);
+				return false;
+			}
+
+		});
 	}
 
 	static void test5(HashMap<Object, Integer> map) {
@@ -218,36 +253,23 @@ public class Main {
 //		}
 //		System.out.println(map.size()); // 17188
 
-		HashMap<String, Integer> map = new HashMap<>();
-		Times.test(map.getClass().getName(), new Task() {
-			@Override
-			public void execute() {
-				for (String word : words) {
-					Integer count = map.get(word);
-					count = count == null ? 0 : count;
-					map.put(word, count + 1);
-				}
-				System.out.println(map.size()); // 17188
-
-				int count = 0;
-				for (String word : words) {
-					Integer i = map.get(word);
-					count += i == null ? 0 : i;
-					map.remove(word);
-				}
-				Asserts.test(count == words.length);
-				Asserts.test(map.size() == 0);
-			}
-		});
+		testMap(new TreeMap(), words);
+		testMap(new HashMap(), words);
+		testMap(new LinkedHashMap<>(), words);
 	}
 
 	public static void main(String[] args) {
 //		test7();
-		test2(new HashMap<>());
-		test3(new HashMap<>());
-		test4(new HashMap<>());
-		test5(new HashMap<>());
+//		test2(new HashMap<>());
+//		test3(new HashMap<>());
+//		test4(new HashMap<>());
+//		test5(new HashMap<>());
 		test1();
+		test4(new LinkedHashMap<>());
+		test2(new LinkedHashMap<>());
+		test3(new LinkedHashMap<>());
+		test4(new LinkedHashMap<>());
+		test5(new LinkedHashMap<>());
 	}
 
 }
