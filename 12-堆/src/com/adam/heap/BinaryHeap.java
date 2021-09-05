@@ -12,13 +12,34 @@ public class BinaryHeap<E> extends AbstractHeap<E> implements BinaryTreeInfo {
 	private E[] elements;
 	private static final int DEFAULT_CAPICITY = 10;
 
-	public BinaryHeap(Comparator<E> comparator) {
+	public BinaryHeap(E[] elements, Comparator<E> comparator) {
 		super(comparator);
-		this.elements = (E[]) new Object[DEFAULT_CAPICITY];
+
+		if (elements == null || elements.length == 0) {
+			this.elements = (E[]) new Object[DEFAULT_CAPICITY];
+		} else {
+//			this.elements = elements;
+			size = elements.length;
+			/// 深拷贝
+			int capacity = Math.max(elements.length, DEFAULT_CAPICITY);
+			this.elements = (E[]) new Object[capacity];
+			for (int i = 0; i < elements.length; i++) {
+				this.elements[i] = elements[i];
+			}
+			heapify();
+		}
+	}
+
+	public BinaryHeap(E[] elements) {
+		this(elements, null);
+	}
+
+	public BinaryHeap(Comparator<E> comparator) {
+		this(null, comparator);
 	}
 
 	public BinaryHeap() {
-		this(null);
+		this(null, null);
 	}
 
 	@Override
@@ -58,8 +79,31 @@ public class BinaryHeap<E> extends AbstractHeap<E> implements BinaryTreeInfo {
 
 	@Override
 	public E replace(E element) {
+		elementNotNullCheck(element);
+		E root = null;
+		if (size == 0) {
+			elements[0] = element;
+			size++;
+		} else {
+			root = elements[0];
+			elements[0] = element;
+			siftDown(0);
+		}
+		return root;
+	}
 
-		return null;
+	/*
+	 * 建堆
+	 */
+	private void heapify() {
+		// 自上而下的上滤
+//		for (int i = 0; i < size; i++) {
+//			siftUp(i);
+//		}
+		// 自下而上的下滤
+		for (int i = (size >> 1) - 1; i >= 0; i--) {
+			siftDown(i);
+		}
 	}
 
 	/*
