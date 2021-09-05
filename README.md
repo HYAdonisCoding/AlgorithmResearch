@@ -1,2 +1,2 @@
-# -AlgorithmResearch
+# AlgorithmResearch
 AlgorithmResearch
