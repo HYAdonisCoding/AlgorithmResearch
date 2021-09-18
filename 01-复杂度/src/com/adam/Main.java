@@ -28,6 +28,27 @@ public class Main {
 		return second;
 	}
 
+	public static int fib3(int n) {
+		if (n <= 1) {
+			return n;
+		}
+		int first = 0;
+		int second = 1;
+		for (int i = 0; i < n - 1; i++) {
+			second = first + second;
+
+			first = second - first;
+
+		}
+		return second;
+	}
+
+	public static int fib4(int n) {
+		double c = Math.sqrt(5);
+
+		return (int) ((Math.pow((1 + c) / 2, n) - Math.pow((1 - c) / 2, n)) / c);
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(123);
