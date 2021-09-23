@@ -1,12 +1,15 @@
-package com.adam.list;
+package com.adam.signal;
 
+import com.adam.list.AbstractList;
+
+// 增加一个虚拟头结点
 @SuppressWarnings("unused")
-public class LinkedList<E> extends AbstractList<E> {
+public class SignalLinkedList2<E> extends AbstractList<E> {
 
 	private Node<E> first;
 
-	public LinkedList() {
-		// TODO Auto-generated constructor stub
+	public SignalLinkedList2() {
+		first = new Node<>(null, null);
 	}
 
 	private static class Node<E> {
@@ -49,27 +52,22 @@ public class LinkedList<E> extends AbstractList<E> {
 
 	@Override
 	public void add(int idx, E element) {
-		if (idx == 0) {
-			first = new Node<>(element, first);
-		} else {
-			Node<E> prev = node(idx - 1);
-			prev.next = new Node<>(element, prev.next);
-		}
+		rangeCheckForAdd(idx);
+
+		Node<E> prev = idx == 0 ? first : node(idx - 1);
+		prev.next = new Node<>(element, prev.next);
 
 		size++;
 	}
 
 	@Override
 	public E remove(int idx) {
-		Node<E> node = first;
-		if (idx == 0) {
-			first = first.next.next;
-		} else {
+		rangeCheck(idx);
 
-			Node<E> prev = node(idx - 1);
-			node = prev.next;
-			prev = node.next;
-		}
+		Node<E> prev = idx == 0 ? first : node(idx - 1);
+
+		Node<E> node = prev.next;
+		prev.next = node.next;
 
 		size--;
 		return node.element;
@@ -110,7 +108,7 @@ public class LinkedList<E> extends AbstractList<E> {
 	private Node<E> node(int idx) {
 		rangeCheck(idx);
 
-		Node<E> node = first;
+		Node<E> node = first.next;
 		for (int i = 0; i < idx; i++) {
 			node = node.next;
 		}
@@ -121,7 +119,7 @@ public class LinkedList<E> extends AbstractList<E> {
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append("ArrayList [size=").append(size).append(", elements=(");
-		Node<E> node = first;
+		Node<E> node = first.next;
 		for (int i = 0; i < size; i++) {
 			if (i != 0) {
 				stringBuilder.append(", ");
