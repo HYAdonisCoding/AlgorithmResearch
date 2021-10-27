@@ -3,7 +3,7 @@ package com.adam;
 import java.util.Comparator;
 
 import com.adam.printer.BinaryTrees;
-import com.adam.tree.BinarySearchTree;
+import com.adam.tree.BST;
 
 public class Main {
 	private static class PersonComparator implements Comparator<Person> {
@@ -22,24 +22,24 @@ public class Main {
 
 	static void test1() {
 		Integer data[] = new Integer[] { 7, 4, 9, 2, 5, 8, 11, 3, 12, 1 };
-		BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+		BST<Integer> binarySearchTree = new BST<>();
 		for (int i = 0; i < data.length; i++) {
 			binarySearchTree.add(data[i]);
 		}
 
 		BinaryTrees.println(binarySearchTree);
 
-		BinarySearchTree<Person> binarySearchTree2 = new BinarySearchTree<>(new PersonComparator());
+		BST<Person> binarySearchTree2 = new BST<>(new PersonComparator());
 		for (int i = 0; i < data.length; i++) {
 			binarySearchTree2.add(new Person(data[i], data[i].toString()));
 		}
 
-		BinarySearchTree<Person> binarySearchTree3 = new BinarySearchTree<>(new PersonComparator2());
+		BST<Person> binarySearchTree3 = new BST<>(new PersonComparator2());
 		for (int i = 0; i < data.length; i++) {
 			binarySearchTree3.add(new Person(data[i], data[i].toString()));
 		}
 
-		BinarySearchTree<Person> binarySearchTree4 = new BinarySearchTree<>(new Comparator<Person>() {
+		BST<Person> binarySearchTree4 = new BST<>(new Comparator<Person>() {
 
 			@Override
 			public int compare(Person o1, Person o2) {
@@ -55,13 +55,13 @@ public class Main {
 	static void test2() {
 		Integer data[] = new Integer[] { 7, 4, 9, 2, 5, 8, 11, 3, 12, 1 };
 
-		BinarySearchTree<Person> binarySearchTree1 = new BinarySearchTree<>();
+		BST<Person> binarySearchTree1 = new BST<>();
 		for (int i = 0; i < data.length; i++) {
 			binarySearchTree1.add(new Person(data[i], data[i].toString()));
 		}
 		BinaryTrees.println(binarySearchTree1);
 
-		BinarySearchTree<Person> binarySearchTree2 = new BinarySearchTree<>(new Comparator<Person>() {
+		BST<Person> binarySearchTree2 = new BST<>(new Comparator<Person>() {
 
 			@Override
 			public int compare(Person o1, Person o2) {
@@ -76,7 +76,7 @@ public class Main {
 	}
 
 	static void test3() {
-		BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+		BST<Integer> binarySearchTree = new BST<>();
 
 		for (int i = 0; i < 30; i++) {
 			binarySearchTree.add(((int) (Math.random() * 100)));
@@ -90,7 +90,7 @@ public class Main {
 	}
 
 	static void test4() {
-		BinarySearchTree<Person> binarySearchTree1 = new BinarySearchTree<>();
+		BST<Person> binarySearchTree1 = new BST<>();
 		binarySearchTree1.add(new Person(10, "Jack"));
 		binarySearchTree1.add(new Person(12, "Rose"));
 		binarySearchTree1.add(new Person(6, "Adam"));
@@ -102,7 +102,7 @@ public class Main {
 	static void test5() {
 		Integer data[] = new Integer[] { 7, 4, 2, 1, 3, 5, 9, 8, 11, 10, 12 };
 
-		BinarySearchTree<Integer> binarySearchTree1 = new BinarySearchTree<>();
+		BST<Integer> binarySearchTree1 = new BST<>();
 		for (int i = 0; i < data.length; i++) {
 			binarySearchTree1.add(data[i]);
 		}
@@ -121,7 +121,7 @@ public class Main {
 	static void test6() {
 		Integer data[] = new Integer[] { 7, 4, 2, 1, 3, 5, 9, 8, 11, 10, 12 };
 
-		BinarySearchTree<Integer> binarySearchTree1 = new BinarySearchTree<>();
+		BST<Integer> binarySearchTree1 = new BST<>();
 		for (int i = 0; i < data.length; i++) {
 			binarySearchTree1.add(data[i]);
 		}
@@ -165,7 +165,7 @@ public class Main {
 	}
 
 	static void test7() {
-		BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+		BST<Integer> binarySearchTree = new BST<>();
 
 		for (int i = 0; i < 30; i++) {
 			binarySearchTree.add(((int) (Math.random() * 100)));
@@ -177,7 +177,7 @@ public class Main {
 
 	static void test8() {
 		Integer data[] = new Integer[] { 7, 4, 9, 2, 1 };
-		BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+		BST<Integer> binarySearchTree = new BST<>();
 		for (int i = 0; i < data.length; i++) {
 			binarySearchTree.add(data[i]);
 		}
@@ -188,7 +188,7 @@ public class Main {
 
 	static void test9() {
 		Integer data[] = new Integer[] { 7, 4, 9, 2, 5, 8, 11, 3, 12, 1 };
-		BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+		BST<Integer> binarySearchTree = new BST<>();
 		for (int i = 0; i < data.length; i++) {
 			binarySearchTree.add(data[i]);
 		}
