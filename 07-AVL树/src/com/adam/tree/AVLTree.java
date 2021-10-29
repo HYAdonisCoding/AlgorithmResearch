@@ -5,6 +5,8 @@ import java.util.Comparator;
 @SuppressWarnings("unused")
 public class AVLTree<E> extends BST<E> {
 
+	public Node<E> node;
+
 	public AVLTree() {
 		this(null);
 	}
@@ -63,14 +65,43 @@ public class AVLTree<E> extends BST<E> {
 
 	}
 
-	private void rotateLeft(Node<E> node) {
-		((AVLNode<E>) node).updateHeight();
+	private void rotateLeft(Node<E> grand) {
+		Node<E> parent = grand.right;
+		Node<E> child = parent.left;
+		grand.right = parent.left;
+		parent.left = grand;
+		afterRotate(grand, parent, child);
+	}
+
+	private void rotateRight(Node<E> grand) {
+		Node<E> parent = grand.left;
+		Node<E> child = parent.right;
+		grand.left = child;
+		parent.right = grand;
+		afterRotate(grand, parent, child);
 
 	}
 
-	private void rotateRight(Node<E> node) {
-		((AVLNode<E>) node).updateHeight();
+	private void afterRotate(Node<E> grand, Node<E> parent, Node<E> child) {
+		// 让parent成为子树的根节点
+		parent.parent = grand.parent;
+		if (grand.isLeftChild()) {
+			grand.parent.left = parent;
+		} else if (grand.isRightChild()) {
+			grand.parent.right = parent;
+		} else {// grand 是根节点
+			root = parent;
+		}
+		// 更新child的parent
+		if (child != null) {
+			child.parent = grand;
+		}
+		// 更新grand的parent
+		grand.parent = parent;
 
+		// 更新高度
+		updateHeight(grand);
+		updateHeight(parent);
 	}
 
 	private boolean isBalanced(Node<E> node) {
@@ -84,7 +115,6 @@ public class AVLTree<E> extends BST<E> {
 
 		public AVLNode(E element, Node<E> parent) {
 			super(element, parent);
-			// TODO Auto-generated constructor stub
 		}
 
 		public int balanceFactor() {
@@ -105,10 +135,20 @@ public class AVLTree<E> extends BST<E> {
 			if (leftHeight > rightHeight) {
 				return left;
 			}
-			if (leftHeight > rightHeight) {
+			if (leftHeight < rightHeight) {
 				return right;
 			}
 			return isLeftChild() ? left : right;
+		}
+
+		@Override
+		public String toString() {
+			Node<E> myNode = ((Node<E>) node);
+			String parentString = "null";
+			if (myNode.parent != null) {
+				parentString = myNode.parent.element.toString();
+			}
+			return myNode.element + "_p(" + parentString + ")_h(" + height + ")";
 		}
 	}
 }
