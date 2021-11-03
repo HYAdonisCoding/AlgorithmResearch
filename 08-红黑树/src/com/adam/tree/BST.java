@@ -108,7 +108,7 @@ public class BST<E> extends BinaryTree<E> {
 				node.parent.right = replacementNode;
 			}
 			// 被删除的节点 之后的处理
-			afterRemove(node);
+			afterRemove(replacementNode);
 		} else if (node.parent == null) {// 叶子节点并且是根节点
 			root = null;
 			// 被删除的节点 之后的处理

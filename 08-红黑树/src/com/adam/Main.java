@@ -105,8 +105,24 @@ public class Main {
 //		System.out.println(tree.isComplete());
 	}
 
+	static void test5() {
+		Integer data[] = new Integer[] { 41, 74, 46, 3, 24, 25, 61, 97, 99, 95 };
+		RBTree<Integer> tree = new RBTree<>();
+		for (int i = 0; i < data.length; i++) {
+			tree.add(data[i]);
+		}
+
+		BinaryTrees.println(tree);
+		for (int i = 0; i < data.length; i++) {
+			tree.remove(data[i]);
+			System.out.println("remove -- [" + data[i] + "]");
+			BinaryTrees.println(tree);
+			System.out.println("------------------------------------");
+		}
+	}
+
 	public static void main(String[] args) {
-		test4();
+		test5();
 
 	}
 
