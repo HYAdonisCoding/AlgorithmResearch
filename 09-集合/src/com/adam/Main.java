@@ -3,6 +3,7 @@ package com.adam;
 import com.adam.Times.Task;
 import com.adam.file.FileInfo;
 import com.adam.file.Files;
+import com.adam.set.ListSet;
 import com.adam.set.Set;
 import com.adam.set.Set.Visitor;
 import com.adam.set.TreeSet;
@@ -55,12 +56,12 @@ public class Main {
 		String[] words = fielInfo.words();
 		System.out.println("单词数量" + words.length);
 
-//		Times.test("ListSet", new Task() {
-//			@Override
-//			public void execute() {
-//				testSet(new ListSet<>(), words);
-//			}
-//		});
+		Times.test("ListSet", new Task() {
+			@Override
+			public void execute() {
+				testSet(new ListSet<>(), words);
+			}
+		});
 		Times.test("TreeSet", new Task() {
 			@Override
 			public void execute() {

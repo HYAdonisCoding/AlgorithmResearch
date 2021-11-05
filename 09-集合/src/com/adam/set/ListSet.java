@@ -13,25 +13,25 @@ public class ListSet<E> implements Set<E> {
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
+
 		return list.isEmpty();
 	}
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
+
 		list.clear();
 	}
 
 	@Override
 	public boolean contains(E element) {
-		// TODO Auto-generated method stub
+
 		return list.contains(element);
 	}
 
 	@Override
 	public void add(E element) {
-		// TODO Auto-generated method stub
+
 //		if (list.contains(element)) {
 //			return;
 //		}
@@ -46,7 +46,7 @@ public class ListSet<E> implements Set<E> {
 
 	@Override
 	public void remove(E element) {
-		// TODO Auto-generated method stub
+
 		int index = list.indexOf(element);
 		if (index != List.ELEMENT_NOT_FOUND) {
 			list.remove(index);
@@ -55,7 +55,7 @@ public class ListSet<E> implements Set<E> {
 
 	@Override
 	public void traversal(Visitor<E> visitor) {
-		// TODO Auto-generated method stub
+
 		if (visitor == null) {
 			return;
 		}
