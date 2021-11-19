@@ -22,12 +22,14 @@ public class _98_验证二叉搜索树 {
 		if (node.left != null) {
 			if (node.left.val < node.val) {
 				return isValid(node.left);
-			} el
+			}
 		}
-			
-		}if(node.right!=null&&node.right.val<node.val)
 
-	{
-		return isValid(node.right);
-	}return false;
-}}
+		if (node.right != null && node.right.val < node.val)
+
+		{
+			return isValid(node.right);
+		}
+		return false;
+	}
+}

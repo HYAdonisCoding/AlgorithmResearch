@@ -12,3 +12,13 @@
 ◼ 二叉搜索树中第K小的元素：https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/
 ◼ 二叉搜索树迭代器：https://leetcode-cn.com/problems/binary-search-tree-iterator/
 ◼ 恢复二叉搜索树：https://leetcode-cn.com/problems/recover-binary-search-tree/
+
+作用
+◼ 合并两个有序数组
+https://leetcode-cn.com/problems/merge-sorted-array/
+◼ 合并两个有序链表
+https://leetcode-cn.com/problems/merge-two-sorted-lists/
+◼ 合并k个有序链表
+https://leetcode-cn.com/problems/-k-sorted-lists/
+◼ 教程
+https://ke.qq.com/course/436549
