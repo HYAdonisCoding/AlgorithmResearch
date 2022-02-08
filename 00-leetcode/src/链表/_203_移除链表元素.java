@@ -2,6 +2,31 @@ package 链表;
 
 // https://leetcode-cn.com/problems/remove-linked-list-elements/
 public class _203_移除链表元素 {
+	/**
+	 * 优化
+	 * 
+	 * @param head
+	 * @param val
+	 * @return
+	 */
+	public static ListNode removeElements1(ListNode head, int val) {
+		if (head == null) {
+			return head;
+		}
+		// 新链表的头结点
+		ListNode newHead = new ListNode(0);
+		// 新链表的尾结点
+		ListNode newTail = newHead;
+		while (head != null) {
+			if (head.val != val) {
+				newTail = newTail.next = head;
+			}
+			head = head.next;
+		}
+		newTail.next = null;
+		return newHead.next;
+	}
+
 	/*
 	 * 输入：head = [1,2,6,3,4,5,6], val = 6 输出：[1,2,3,4,5] 示例 2：
 	 * 
@@ -17,29 +42,25 @@ public class _203_移除链表元素 {
 		if (head == null) {
 			return head;
 		}
-		ListNode node = head;
-		while (node != null) {
-			if (node.val == val) {
-				node = (node.next == null || node.next.next == null) ? null : node.next.next;
-
-			} else {
-				node = node.next;
-				System.out.println(node);
+		// 新链表的头结点
+		ListNode newHead = null;
+		// 新链表的尾结点
+		ListNode newTail = null;
+		while (head != null) {
+			if (head.val != val) {
+				if (newTail == null) {
+					newHead = head;
+					newTail = head;
+				} else {
+					newTail = newTail.next = head;
+				}
 			}
-
+			head = head.next;
 		}
-		return head;
-
-//		if (head == null) {
-//			return null;
-//		}
-//		head.next = removeElements(head.next, val);
-//		if (head.val == val) {
-//			return head.next;
-//		} else {
-//			return head;
-//		}
-
+		if (newTail != null) {
+			newTail.next = null;
+		}
+		return newHead;
 	}
 
 	public static void main(String[] args) {
