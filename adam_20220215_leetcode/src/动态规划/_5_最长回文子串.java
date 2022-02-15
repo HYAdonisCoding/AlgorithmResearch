@@ -12,12 +12,12 @@ public class _5_最长回文子串 {
 		cs[0] = '^';
 		cs[1] = '#';
 		cs[cs.length-1] = '$';
-		for (int i = 0;i<oldCs.length; i++) {
+		for (int i = 0;i < oldCs.length; i++) {
 			int idx = (i + 1) << 1;
 			cs[idx] = oldCs[i];
-			cs[idx + 1] = "#";
+			cs[idx + 1] = '#';
 		}
-		return cs
+		return cs;
 	}
 	/**
 	 * 马拉车 Manacher
@@ -38,7 +38,30 @@ public class _5_最长回文子串 {
 		char[] cs = preprocess(oldChars);
 		// 构建m数组
 		int[] m = new int[cs.length];
-
+		// 最大回文字符串
+		int maxLen = 0, idx = 0;
+		int c = 1, r = 1, lastIdx = cs.length - 2;
+		for (int i = 2; i < lastIdx; i++) {
+			if (r > i) {
+				int li = (c << 1) - i;
+				m[i] =  (i + m[li] <= r) ? m[li] : (r - i);
+			}
+			// 以i为中心向左右扩散
+			while (cs[i + m[i] + 1] == cs[i - m[i] - 1]) {
+				m[i]++;
+			}
+			// 更新c, r
+			if (i + m[i] > r) {
+				c = i;
+				r = i + m[i];
+			}
+			if (m[i] > maxLen) {
+				maxLen = m[i];
+				idx = i;
+			}
+		}
+		int begin = (idx - maxLen) >> 1;
+		System.out.println(begin+"_"+maxLen+"_"+idx);
 		return new String(oldChars, begin, maxLen);
 	}
 
@@ -182,7 +205,8 @@ public class _5_最长回文子串 {
 //		System.out.println(longestPalindrome("aa"));
 //		System.out.println(longestPalindrome("ccc"));
 
-		System.out.println(longestPalindrome("abba"));
+		System.out.println(longestPalindrome("babad"));
+		System.out.println(longestPalindrome("ac"));
 	}
 
 }

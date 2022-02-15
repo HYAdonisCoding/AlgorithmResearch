@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2bfe951b-dd3d-49e3-9e05-fa5f70f76c2f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/com/adam/printer/BinaryTreeInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/com/adam/printer/BinaryTrees.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/com/adam/printer/InorderPrinter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/com/adam/printer/LevelOrderPrinter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/com/adam/printer/Printer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/com/adam/printer/Strings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/com/adam/tools/Asserts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/com/adam/tools/Integers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/com/adam/tools/Times.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/common/TreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/二叉搜索树/HomeWork" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/二叉搜索树/TreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/二叉搜索树/_450_删除二叉搜索树中的节点.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/二叉搜索树/_700_二叉搜索树中的搜索.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/二叉搜索树/_701_二叉搜索树中的插入操作.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/二叉搜索树/_98_验证二叉搜索树.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/二叉树/TreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/二叉树/_110_平衡二叉树.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/二叉树/_226_翻转二叉树.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/分治/_53_最大子数组和.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/动态规划/_121_买卖股票的最佳时机.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/动态规划/_5_最长回文子串.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/动态规划/_72_编辑距离.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/动态规划/剑指Offer_47_礼物的最大价值.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/字符串/_151_翻转字符串里的单词.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/字符串/_242_有效的字母异位词.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/字符串/_3_无重复字符的最长子串.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/字符串/_572_另一棵树的子树.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/字符串/面试题01_09_字符串轮转.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/排序_数组/_75_颜色分类.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/排序_数组/_88_合并两个有序数组.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/排序_数组/_面试题16_16_部分排序.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/栈/MinStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/栈/_150_逆波兰表达式求值.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/栈/_20_有效的括号.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/栈/_224_基本计算器.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/栈/_225_用队列实现栈.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/栈/_232_用栈实现队列.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/栈/_239_滑动窗口最大值.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/栈/_654_最大二叉树.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/栈/_739_每日温度.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/栈/_856_括号的分数.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/链表/ListNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/链表/_141_环形链表.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/链表/_160_相交链表.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/链表/_203_移除链表元素.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/链表/_206_反转链表.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/链表/_234_回文链表.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/链表/_237_删除链表中的节点.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/链表/_2_两数相加.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/链表/_86_分隔链表.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../adam_20220215_leetcode/src/集合/_349_两个数组的交集.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../00-leetcode/src/动态规划/_5_最长回文子串.java" beforeDir="false" afterPath="$PROJECT_DIR$/../00-leetcode/src/动态规划/_5_最长回文子串.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="257xONHZ7hq2x0WolJnChX70lhH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2bfe951b-dd3d-49e3-9e05-fa5f70f76c2f" name="Changes" comment="" />
+      <created>1644891896195</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1644891896195</updated>
+      <workItem from="1644891897524" duration="457000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
