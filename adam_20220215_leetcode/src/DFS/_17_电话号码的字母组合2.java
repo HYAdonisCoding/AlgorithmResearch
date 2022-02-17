@@ -8,24 +8,20 @@ import java.util.List;
  * @date 2022/2/17
  * @apiNote DFS
  */
-public class _17_电话号码的字母组合 {
+public class _17_电话号码的字母组合2 {
     private char[][] lettersArray = {
             {'a', 'b', 'c'}, {'d', 'e', 'f'}, {'g', 'h', 'i'},
             {'j', 'k', 'l'}, {'m', 'n', 'o'}, {'p', 'q', 'r', 's'},
             {'t', 'u', 'v'}, {'w', 'x', 'y', 'z'},
     };
-    private char[] chars;
-    /** 用来存储每一层存储的字母*/
-    private char[] string;
-    private List<String> list;
     public List<String> letterCombinations(String digits) {
         if (digits == null) return null;
-        list = new ArrayList<>();
-        chars = digits.toCharArray();
+        List<String> list = new ArrayList<>();
+        char[] chars = digits.toCharArray();
 
         if (chars.length == 0) return  list;
-        string = new char[chars.length];
-        dfs(0);
+        char[] string = new char[chars.length];
+        dfs(0, chars, string, list);
         return list;
     }
 
@@ -33,7 +29,7 @@ public class _17_电话号码的字母组合 {
     * 正在搜索第i层
     * @Param:  i
     */
-    private void dfs(int i) {
+    private void dfs(int i, char[] chars, char[] string, List<String> list) {
         if (i == chars.length) {
             // 已经进入到最后一层了不能再深入了
             // 得到一个正确的解
@@ -44,7 +40,7 @@ public class _17_电话号码的字母组合 {
         char[] letters = lettersArray[chars[i] - '2'];
         for (char letter: letters) {
             string[i] = letter;
-            dfs(i + 1);
+            dfs(i + 1, chars, string, list);
         }
     }
 }
